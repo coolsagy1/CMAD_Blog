@@ -1,0 +1,51 @@
+  <!-- Signup Panel -->
+  <div id="signup-section" class="container-fluid" style= "padding-top: 80px;">
+    <div id="signup-col-sm-4-1" class="col-sm-4"></div>
+    <div id="signup-col-sm-4-2" class="col-sm-4" ng-controller="SigninController">
+     <div class="row well well-lg">
+        <h3 style="color: #79b9d2; text-align:center;">SIGNUP</h3>
+        <form ng-submit="signin()"  target="#" autocomplete="off">
+        <fieldset>
+        <!-- <div class="imgcontainer" style="text-align: center; margin: 14px 0 6px 0;">
+          <img src="./img/img_avatar1.png" alt="Avatar" class="avatar" style="border-radius: 50%;" width="35" height="35">
+        </div> -->
+        <div class="form-group-name">
+          <label class="control-label" style="font-size: 13px; padding-left: 10px;">Name</label>
+          <input class="form-control" placeholder="Enter Name" type="text" ng-model="name">
+        </div>
+        <br>
+        <div class="form-group-email">
+          <label class="control-label" style="font-size: 13px; padding-left: 10px; ">Email</label>
+          <input class="form-control" placeholder="email@domain.com" type="email" ng-model="email">
+        </div>
+        <br>
+        <div class="form-group-password">
+          <label class="control-label" style="font-size: 13px;padding-left: 10px;">Password</label>
+          <input class="form-control" placeholder="******" title="Password needs atleast (4) characters" type="password"ng-model="password" >
+        </div>
+        <br>
+        <div class="form-group-password">
+          <label class="control-label" style="font-size: 13px;padding-left: 10px;">Confirm Password</label>
+          <input class="form-control" placeholder="******" title="Password needs atleast (4) characters" type="password" ng-model="confirmpwd" >
+        </div>
+        <br>
+        <!-- <div class="form-group-area-of-interest">
+          <label class="control-label" style="font-size: 13px;padding-left: 10px;">Area Of Interest</label>
+          <select id="area-of-interest" class="form-control">
+            <option>Movies</option>
+            <option>Technology</option>
+            <option>Sports</option>
+          </select>
+        </div> -->
+        <br>
+        <div class="form-group-signup">
+          <button id="mybutton" type="submit" class="btn btn-primary">SignUp</button>
+          <!-- <button type="button" class="btn btn-primary pull-right">Login <span class="glyphicon glyphicon-log-in"></span></button> -->
+        </div>
+        </fieldset>
+
+      </form>
+      </div>
+    </div>
+    <div id="signup-col-sm-4-3" class="col-sm-4"></div>
+  </div>

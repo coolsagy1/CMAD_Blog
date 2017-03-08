@@ -1,0 +1,25 @@
+  <!-- Login Panel -->
+  <div  class="container-fluid" style= "padding-top: 80px;" >
+    <div id="login-col-sm-4-1" class="col-sm-4"></div>
+    <div id="login-col-sm-4-2" class="col-sm-4" ng-controller="forgetController">
+    <h3 style="color: #79b9d2; text-align:center; font-family: 'Bauhaus 93';">LOGIN</h3>
+      <form ng-submit="forget()" target="#" autocomplete="off">
+        <fieldset>
+          <!-- <div class="imgcontainer" style="text-align: center; margin: 24px 0 15px 0;">
+            <img src="./img/img_avatar6.png" alt="Avatar" class="avatar" style="border-radius: 50%;" width="65" height="65">
+          </div> -->
+          <div class="form-group-email">
+            <label class="control-label" style="font-size: 13px; padding-left: 10px;">Email</label>
+            <input class="form-control" placeholder="email@domain.com" type="email" ng-model="email">
+          </div>
+          <br>
+        <!--   <div class="form-group-login"> -->
+            <button id="mybutton" type="submit" class="btn btn-primary" style="padding-left: 20px;">Cancel </button>
+           <!--  <button type="button" class="btn btn-primary pull-right">Signup</button> -->
+        <!--   </div> -->                                              
+        </fieldset>
+
+      </form>
+    </div>
+    <div id="login-col-sm-4-3" class="col-sm-4"></div>
+  </div>
