@@ -1,12 +1,10 @@
 package org.cmad.blog.data;
 
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.bson.types.ObjectId;
 import org.cmad.blog.api.Comment;
 import org.cmad.blog.api.UserPosts;
 

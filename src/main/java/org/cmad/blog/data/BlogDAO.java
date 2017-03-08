@@ -6,6 +6,8 @@ import org.cmad.blog.api.Comment;
 import org.cmad.blog.api.User;
 import org.cmad.blog.api.UserPosts;
 import org.mongodb.morphia.Datastore;
+import org.mongodb.morphia.query.Query;
+import org.mongodb.morphia.query.UpdateOperations;
 
 public class BlogDAO implements DAO {
 
@@ -37,6 +39,7 @@ public class BlogDAO implements DAO {
 
 	public int createPost(UserPosts post) {
 		System.out.println("BlogDAO.createPost() post:"+post);
+		System.out.println("BlogDAO.createPost() comments:"+post.getComments().add(new Comment()));
 		dStore.save(post);
 		return 0;
 	}
@@ -60,6 +63,9 @@ public class BlogDAO implements DAO {
 
 	@Override
 	public void updatePost(UserPosts post) {
-		dStore.merge(post);		
+		//dStore.merge(post);
+		Query<UserPosts> query = dStore.createQuery(UserPosts.class).field("title").equal(post.getTitle()).field("author").equal(post.getAuthor());
+		UpdateOperations<UserPosts> ops = dStore.createUpdateOperations(UserPosts.class).set("comments", post.getComments()).set("likes", post.getLikes());
+		dStore.update(query, ops);		
 	}
 }

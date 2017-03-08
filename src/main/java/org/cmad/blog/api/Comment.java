@@ -66,4 +66,8 @@ public class Comment {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Comment [" +getAuthor()+" "+getComment()+" "+getCreatedTime()+"] ";
+	}
 }
