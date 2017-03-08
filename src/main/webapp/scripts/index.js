@@ -82,18 +82,15 @@
 			}
 			console.log(JSON.stringify(user));
 			 $location.url('/login');
-//			var promise = $http.get("techblog/techspace/user/logout");
-//			promise.success(function() {
-//				Notification.success('Logout Successful.');
-//				$scope.emitLogoutStatus(true);
-//				resetData();
-//			});
-//			promise.error(function() {
-//				Notification.error('Logout error');
-//				console.log("Error in loggout");
-//				$scope.emitLogoutStatus(false);
-//				resetData();
-//			});
+			var signup = $http.post("online/user/signup",user);
+			signup.success(function() {
+				console.log("signup.success");
+				$location.url('/login');
+			});
+			signup.error(function() {
+				console.log("signup.failure");
+			});
+			
 		};
 //		$scope.emitLogoutStatus = function(data) {
 //			console.log(data);
