@@ -27,6 +27,11 @@ public class SimpleBlog implements Blog {
 
 	}
 
+public void setDAO(DAO blogDAO)  {
+		
+     this.blogDao = blogDAO;
+	}
+
 	public User addUser(User user) throws BlogException {
 		if(user==null || user.getEmail().trim().length() == 0)
 			throw new BlogException();
