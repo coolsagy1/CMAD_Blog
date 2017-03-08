@@ -13,6 +13,8 @@ import org.cmad.blog.data.BlogDAO;
 import org.cmad.blog.data.DAO;
 import org.cmad.blog.data.TestDao;
 
+
+
 public class SimpleBlog implements Blog {
 
 	DAO blogDao ;
