@@ -6,9 +6,11 @@
 	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>blog Maven Webapp</name>
+	
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 		<junit.version>4.12</junit.version>
 		<hibernate.version>5.2.2.Final</hibernate.version>
 		<jersey.version>2.22.2</jersey.version>
@@ -92,13 +94,13 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<outputDirectory>/Users/achhabda/CMAD_TOOLS/programs/tomcat-8.5.9/webapps</outputDirectory>
 				</configuration>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 </project>
