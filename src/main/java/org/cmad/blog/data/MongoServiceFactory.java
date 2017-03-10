@@ -16,8 +16,10 @@ public class MongoServiceFactory {
      * @return
      */
     public static Datastore getMongoDB(){
-        String address = "localhost";
-        //address = "173.36.55.239";
+        String address = "null";
+       // address = "localhost";
+        address = "146.148.45.81";
+        
         if(mongoTL.get()==null){
             MongoClientURI connectionString = new MongoClientURI("mongodb://"+address+":27017");
             MongoClient mongoClient = new MongoClient(connectionString);    

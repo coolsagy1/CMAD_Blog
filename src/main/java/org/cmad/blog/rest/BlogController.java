@@ -18,12 +18,15 @@ import org.cmad.blog.Blog;
 import org.cmad.blog.api.User;
 import org.cmad.blog.api.UserPosts;
 import org.cmad.blog.biz.SimpleBlog;
+import org.cmad.blog.data.BlogDAO;
 
 @Path("/user")
 public class BlogController {
 	Blog blog;
 	public BlogController() {
-		blog = new SimpleBlog();		
+		blog = new SimpleBlog();
+		BlogDAO blogDao = new BlogDAO();
+		blog.setDAO(blogDao);
 	}
 
 	@POST

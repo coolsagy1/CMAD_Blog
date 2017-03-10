@@ -22,8 +22,7 @@ public class SimpleBlog implements Blog {
 	TestDao dao;
 
 	public SimpleBlog() {
-		blogDao = new BlogDAO();
-		//dao = new TestDao();
+		System.out.println("SimpleBlog.SimpleBlog()----->>>ateesh removed call from constructor");
 
 	}
 

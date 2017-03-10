@@ -4,6 +4,7 @@ import java.util.List;
 import org.cmad.blog.api.User;
 import org.cmad.blog.api.Topic;
 import org.cmad.blog.api.UserPosts;
+import org.cmad.blog.data.DAO;
 import org.cmad.blog.api.Comment;
 
 public interface Blog {
@@ -29,4 +30,6 @@ public interface Blog {
 	public List<UserPosts> getPosts();
 
 	public void updatePost(UserPosts post);
+	
+	public void setDAO(DAO blogDAO) ;
 }

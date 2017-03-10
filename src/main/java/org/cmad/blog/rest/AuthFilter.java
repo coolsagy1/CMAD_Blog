@@ -16,6 +16,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.cmad.blog.Blog;
 import org.cmad.blog.api.User;
 import org.cmad.blog.biz.SimpleBlog;
+import org.cmad.blog.data.BlogDAO;
 
 
 /**
@@ -32,6 +33,8 @@ public class AuthFilter implements Filter {
 	public void init(FilterConfig filterConfig) throws ServletException {
 		System.out.println("AuthFilter.init()");
 		blog = new SimpleBlog();
+		BlogDAO blogDao = new BlogDAO();
+		blog.setDAO(blogDao);
 	}
 
 	@Override
