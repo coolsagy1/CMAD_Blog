@@ -191,3 +191,9 @@ img {
 #mybutton{
 	 background-color:#79b9d2;;
 }
+.messages {
+  //font-size: smaller;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: red;
+}

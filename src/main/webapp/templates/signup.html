@@ -1,34 +1,38 @@
   <!-- Signup Panel -->
   <div id="signup-section" class="container-fluid" style= "padding-top: 80px;">
     <div id="signup-col-sm-4-1" class="col-sm-4"></div>
-    <div id="signup-col-sm-4-2" class="col-sm-4" ng-controller="SigninController">
+    <div id="signup-col-sm-4-2" class="col-sm-4" ng-controller="SignupController">
      <div class="row well well-lg">
         <h3 style="color: #79b9d2; text-align:center;">SIGNUP</h3>
-        <form ng-submit="signin()"  target="#" autocomplete="off">
+        <form name="registrationForm" novalidate ng-submit="signup(registrationForm.$valid)"  target="#" autocomplete="off">
         <fieldset>
         <!-- <div class="imgcontainer" style="text-align: center; margin: 14px 0 6px 0;">
           <img src="./img/img_avatar1.png" alt="Avatar" class="avatar" style="border-radius: 50%;" width="35" height="35">
         </div> -->
         <div class="form-group-name">
           <label class="control-label" style="font-size: 13px; padding-left: 10px;">Name</label>
-          <input class="form-control" placeholder="Enter Name" type="text" ng-model="name">
+          <input class="form-control" placeholder="Enter Name" type="text" ng-model="name" name="username" ng-minlength="2" ng-maxlength="20">
+           <div ng-messages="registrationForm.username.$error" ng-messages-include="./templates/messages.html"></div>
         </div>
         <br>
         <div class="form-group-email">
           <label class="control-label" style="font-size: 13px; padding-left: 10px; ">Email</label>
-          <input class="form-control" placeholder="email@domain.com" type="email" ng-model="email">
+          <input class="form-control" placeholder="email@domain.com" type="email" ng-model="email" name="email" ng-minlength="7" ng-maxlength="25">
         </div>
+        <div ng-messages="registrationForm.email.$error" ng-messages-include="./templates/messages.html"></div>
         <br>
         <div class="form-group-password">
           <label class="control-label" style="font-size: 13px;padding-left: 10px;">Password</label>
-          <input class="form-control" placeholder="******" title="Password needs atleast (4) characters" type="password" ng-model="password" >
+          <input class="form-control" placeholder="******" title="Password needs atleast (4) characters" type="password" ng-model="password"  name="password" ng-minlength="5" ng-maxlength="25">
         </div>
+        <div ng-messages="registrationForm.password.$error" ng-messages-include="./templates/messages.html"></div>
         <br>
         <div class="form-group-password">
           <label class="control-label" style="font-size: 13px;padding-left: 10px;">Confirm Password</label>
-          <input class="form-control" placeholder="******" title="Password needs atleast (4) characters" type="password" ng-model="confirmpwd" >
+          <input class="form-control" placeholder="******" title="Password needs atleast (4) characters" type="password" ng-model="confirmpwd" name="confirmpwd""  compare-to="password" >
         </div>
-        <br>
+            <div ng-messages="registrationForm.confirmpwd.$error" ng-messages-include="./templates/messages.html"></div>
+       
         <!-- <div class="form-group-area-of-interest">
           <label class="control-label" style="font-size: 13px;padding-left: 10px;">Area Of Interest</label>
           <select id="area-of-interest" class="form-control">
