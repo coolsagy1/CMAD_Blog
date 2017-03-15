@@ -1,6 +1,6 @@
 (function() {
 	var app = angular.module('blogApp', [ "ngRoute","ngMessages" ]);
-
+      
 	app.controller('BlogController', [
 			'$http',
 			function($http, $rootScope) {
@@ -34,13 +34,15 @@
 				}*/
 				/*Adding Post Module*/
 				blog.addPost = function() {
-
+                 
 					blog.post.createdTime = Date.now();
 					blog.post.comments = [];
 					blog.post.likes = 0;
 					blog.post.title = blog.post.title;
 					blog.post.body = blog.post.body;
 					blog.post.imageURL = blog.post.image;
+					blog.post.author = blog.post.author;
+                    
 
 					var newPost = {
 						title : blog.post.title,
@@ -166,7 +168,7 @@
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + auth;
 			var url = 'http://localhost:8080/blog/online/user/signin';
 			var login = $http.post(url);
-
+			
 			login.success(function(data) {
 				console.log("Login Sucess!" + JSON.stringify(data));
 				if (credentials.email !== undefined) {
@@ -176,6 +178,9 @@
 				$('#logindrop').hide();
 				$('#logoutdrop').show();
 				$rootScope.isloginfailed = false;
+				$rootScope.usrName = data.name;
+				$rootScope.showName = true;
+				
 			});
 			login.error(function(data) {
 				console.log("Login Failed!");
@@ -189,6 +194,7 @@
 		function resetData() {
 			$http.defaults.headers.common.Authorization = '';
 			$rootScope.globals = {};
+			$rootScope.showName = false;
 			$("#newPostAuthor").val("Guest");
 		}
 		;
