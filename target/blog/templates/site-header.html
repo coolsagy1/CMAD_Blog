@@ -1,0 +1,66 @@
+
+<!-- <div class="topbar"> -->
+<div class="container">
+	<!-- <div class="row">
+			<div class="col-s-4">
+				<h1 href="#home" ng-click="blog.selectTab('blog')" class="push-left">{{blog.title}}</h1>
+			</div> -->
+	<!-- <div class="offset-s-4 col-s-4"> -->
+
+	<nav class=" navbar navbar-default navbar-fixed-top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+
+			</button>
+			<h1 style="color: white; margin-left: 30px" href="#home"
+				ng-click="blog.selectTab('blog')" class="push-left">{{blog.title}}</h1>
+		</div>
+		<div id="myNavbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+
+				<li><a ng-click="blog.selectTab('blog')" class="active"
+					href="#home"><button class="dropbtn" id="homebutton">
+							Home</button></a></li>
+				<!-- <li class="dropdown">
+					<div>
+					<button class="dropbtn dropdown-toggle " id="dropbtn1">
+						Blog <span class="fa fa-angle-double-down" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-content">
+						<a href="#home" ng-click="blog.selectTab('blog')">All Posts</a> <a
+							ng-click="blog.selectTab('new')">New Post</a>
+					</div> </div>
+				</li> -->
+				<li><div class="dropdown" id="logindrop">
+						<button class="dropbtn dropdown-toggle" id="dropbtn1">
+							Login <span class="fa fa-angle-double-down" aria-hidden="true"></span>
+						</button>
+						<div class="dropdown-content">
+							<a href="#signup">sign Up</a> <a href="#login">Sign In</a>
+						</div>
+					</div></li>
+				<li><div class="dropdown" id="logoutdrop" style="display: none;">
+						<button class="dropbtn dropdown-toggle" id="dropbtn1">
+							Hi {{usrName | uppercase}}  <span class="fa fa-angle-double-down" aria-hidden="true"></span>
+						</button>
+						<div class="dropdown-content">
+							<a href="#signup">Update Profile</a> <a href="#logout">Logout</a>
+						</div>
+					</div></li>
+
+				<li style="margin-top: 15px; margin-right: 10px">
+					<form role="search" method="get" class="navbar-form">
+						<input type="text" name="q" class="form-control"
+							placeholder="Search..."> <a href="#search"> <span
+							class="fa fa-search"></span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->

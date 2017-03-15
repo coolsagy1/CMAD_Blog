@@ -1,0 +1,34 @@
+  <!-- Login Panel -->
+  <div  class="container-fluid" style= "padding-top: 80px;" >
+ 
+    <div id="login-col-sm-4-1" class="col-sm-4"></div>
+    
+    <div id="login-col-sm-4-2" class="col-sm-4" ng-controller="LoginController as asd">
+     <div class="row well well-lg">
+    <h3 style="color: #79b9d2; text-align:center;">LOGIN</h3>
+      <form name ="loginForm" novalidate ng-submit="asd.login(credentials)" target="#" autocomplete="off">
+        <fieldset>
+          <div class="form-group-email">
+            <label class="control-label" style="font-size: 13px; padding-left: 10px;">Email</label>
+            <input class="form-control" placeholder="someone@domain.com" name="email" type="email" ng-model="credentials.email" >
+          </div>
+          <div ng-messages="loginForm.email.$error" ng-messages-include="./templates/messages.html"></div>
+          <br>
+          <div class="form-group-password">
+            <label class="control-label" style="font-size: 13px; padding-left: 10px;">Password</label>
+            <input class="form-control" placeholder="*password" type="password" ng-model="credentials.password">
+          </div>
+          <br>
+          <div class="form-group-login">
+            <button id="mybutton" type="submit" class="btn btn-primary" style="padding-left: 20px;">Login  <span class="glyphicon glyphicon-log-in"></span></button>
+           <!--  <button type="button" class="btn btn-primary pull-right">Signup</button> -->
+          </div>
+          <br>
+           <div ng-show="isloginfailed" style="color: red ">Incorrect Email or Password </div>
+          <a href="#forget" id="forgot-password">Forgot Your Password?</a>                                                
+        </fieldset>
+      </form>
+    </div>
+    <div id="login-col-sm-4-3" class="col-sm-4"></div>
+    </div>
+  </div>

@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1 {
+		
+	font-size: 207%;
+	color: gray;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.error {
+	width: 100%;
+	margin-left: 40%!important;
+	text-align: center;
+	vertical-align: middle;
+	color: #e20d0d;
+	//background-color: rgba(210, 119, 119, 0.27);
+	border-radius: 14px;
+}
+#SignUpForm,#SignInForm ,#blogpostPage{
+			
+	width: 100%;
+	//text-align: center;
+	vertical-align: middle;
+	color: black;
+	background-color: rgba(121, 117, 114, 0.5);
+	border-radius: 4px;
+}
+#login,#create,#addpost{
+	location:absolute
+	width: 100%;
+	//text-align: center;
+	vertical-align: middle;
+	color: black;
+	background-color: rgba(144, 129, 118, 0.56);
+	border-radius: 11px;
+	width: 100%;
+}
+
+
+
+#SignIn, #SignUp {
+	font-size: 1.15rem;
+	font-weight: 500;
+	color: blue;
+	text-decoration: none;
+}
+
+#IdSignUp {
+	display: none;
+}
+
+#Label_UserEmail, #Label_Password, #Label_FullName,
+#Label_Email, #Label_SignupPassword, #Label_ConfirmSignupPassword,
+#Label_PhoneNumber, #Label_Interests, #InterestsList {
+	display: block;
+	color: gray;
+	margin-left: 25%!important;
+	margin-bottom: 10px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: large;
+}
+
+
+
+#Label_FullName {
+	clear: both;
+}
+
+input[type=text], input[type=password], input[type=email],
+input[type=number],#addpost {
+	
+	location:absolute
+
+	font-size: smaller;
+	color: black;
+	width: 90%;
+	border-radius: 5px;
+	border: 3px solid #a79797;
+	padding: 5px;
+	margin-left: 25%!important;
+	margin-right: 25%!important;
+	margin-bottom: 15px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+#ForgotPassword {
+	color: #2f9033;
+	margin-left: 25%!important;
+	margin-bottom: 5px;
+}
+
+.SignInButton, .SignUpButton {
+	float: right!important;
+	margin-right: 23.5%!important;
+}
+
+.LoginError {
+	location:relative 
+	float: left!important;
+	text-decoration: none;
+	margin-left: 25%!important;
+	margin-top:10px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: medium;
+	color: #ec1313;
+}
+
+#Login, #Signup {
+	border-radius: 2px;
+    font-size: 18px;
+    height: 40px;
+    line-height: .6em;
+	border: 1px solid transparent;
+	background-color: #f96816;
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+}

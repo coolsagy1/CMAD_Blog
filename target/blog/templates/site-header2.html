@@ -1,0 +1,32 @@
+ <div class="topbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-s-4">
+              <h1 href="#home" ng-click="blog.selectTab('blog')" class="push-left">{{blog.title}}</h1>
+            </div>
+            <div class="offset-s-4 col-s-4">
+
+              <nav >         
+    <ul class="push-left" id="myTopnav">
+
+     <li><a ng-click="blog.selectTab('blog')" class="active" href="#home">Home</a></li>
+    <li><div class="dropdown">
+  <button class="dropbtn btn-primary dropdown-toggle" >Blog <span class="fa fa-angle-double-down" aria-hidden="true" ></span></button>
+  <div class="dropdown-content">
+   <a  href="#home" ng-click="blog.selectTab('blog')" >All Posts</a>
+    <a    ng-click="blog.selectTab('new')">New Post</a>
+  </div>
+</div></li>
+  <li><div class="dropdown">
+  <button class="dropbtn btn-primary dropdown-toggle"  >Login <span class="fa fa-angle-double-down" aria-hidden="true"></span></button>
+  <div class="dropdown-content">
+   <a href="#signup" >sign Up</a>
+    <a href="#login">Sign In</a>
+  </div>
+</div></li> 
+<li><form role="search" method="get" class="form-control" action="API_CALL_USIGN_ANGULAR()"> <input type="text" name="q" class="form-control" placeholder="Search..."> <a href="#search"> <!-- <span class="fa fa-search" ></span --></a>
+</li>  </nav>     
+            </div>
+          </div>
+        </div>      
+      </div> 
