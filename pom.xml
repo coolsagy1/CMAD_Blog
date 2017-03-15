@@ -92,13 +92,13 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<outputDirectory>C:\Proj\CMAD\programs\apache-tomcat-8.5.9\webapps</outputDirectory>
 				</configuration>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 </project>
