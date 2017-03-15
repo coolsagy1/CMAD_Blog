@@ -55,11 +55,11 @@
 
 					console.log(JSON.stringify(blog.post));
 					console.log(JSON.stringify(newPost));
-					console.log("Before :"+blog.posts);
-					blog.posts.unshift(this.post);
-					//blog.posts.push(this.post);
-					blog.tab = 0;
-					console.log("After:"+blog.posts);
+					console.log("Before :"+JSON.stringify(blog.posts));
+					//blog.posts.unshift(this.post);
+					blog.posts.push(this.post);
+					blog.tab = blog.post.length;
+					console.log("After:"+JSON.stringify(blog.posts));
 					$http.post('online/user/posts',
 							newPost).success(function(data) {
 						console.log(JSON.stringify(data));

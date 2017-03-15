@@ -84,8 +84,8 @@
 	<build>
 		<finalName>blog</finalName>
 
-		<!--<plugins>
-			<plugin>
+		<plugins>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.0</version>
@@ -93,14 +93,14 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			 <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<outputDirectory>/Users/achhabda/CMAD_TOOLS/programs/tomcat-8.5.9/webapps</outputDirectory>
+					<outputDirectory>C:\Proj\CMAD\programs\apache-tomcat-8.5.9\webapps</outputDirectory>
 				</configuration>
 			</plugin>
-		</plugins> -->
+		</plugins>
 	</build>
 </project>

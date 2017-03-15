@@ -5,13 +5,14 @@
 			'$http',
 			function($http, $rootScope) {
 				console.log("Entered BlogController");
+				
 				$('#logindrop').show();
 				$('#logoutdrop').hide();
 
 				var blog = this;
 				blog.title = "HeyBuddy";
 				blog.posts = {};
-				$http.get('http://localhost:8080/blog/online/user/posts')
+				$http.get('online/user/posts')
 						.success(function(data) {
 							blog.posts = data;
 						});
@@ -19,19 +20,16 @@
 				blog.tab = 'blog';
 
 				blog.selectTab = function(setTab) {
+					console.log("setTab:"+setTab);
 					blog.tab = setTab;
 				};
 
 				blog.isSelected = function(checkTab) {
+					console.log("blog.tab("+blog.tab+")===checkTab("+checkTab+")");
 					return blog.tab === checkTab;
 				};
 
 				blog.post = {};
-				/*if($rootScope!=null)
-				{
-					console.log($rootScope.globals.currentUser.username);
-					$("#newPostAuthor").val($rootScope.globals.currentUser.username);
-				}*/
 				/*Adding Post Module*/
 				blog.addPost = function() {
                  
@@ -42,6 +40,7 @@
 					blog.post.body = blog.post.body;
 					blog.post.imageURL = blog.post.image;
 					blog.post.author = blog.post.author;
+					console.log("Author:"+blog.post.author);
                     
 
 					var newPost = {
@@ -56,18 +55,20 @@
 
 					console.log(JSON.stringify(blog.post));
 					console.log(JSON.stringify(newPost));
-					// $http.put('data/postData.json',blog.post);
-					blog.posts.unshift(this.post);
-					//blog.posts.push(this.post);
-					blog.tab = 0;
-					console.log(newPost.comments);
-					$http.post('http://localhost:8080/blog/online/user/posts',
+					console.log("Before :"+JSON.stringify(blog.posts));
+					//blog.posts.unshift(this.post);
+					blog.posts.push(this.post);
+					blog.tab = blog.post.length;
+					console.log("After:"+JSON.stringify(blog.posts));
+					$http.post('online/user/posts',
 							newPost).success(function(data) {
 						console.log(JSON.stringify(data));
 					});
 					blog.post = {};
 				};
 			} ]);
+	
+	
 	app.controller('SignupController', function($scope, $http, $location) {
 		console.log(" Method called");
 		$scope.name = "";
@@ -96,26 +97,12 @@
 			});
 			signup.error(function() {
 				console.log("signup.failure");
-			});
-			
+			});			
 			}
-
 		};
-		//		$scope.emitLogoutStatus = function(data) {
-		//			console.log(data);
-		//			if (data) {
-		//				$rootScope.$emit("logout");
-		//			} else {
-		//				$rootScope.$emit("logout");
-		//			}
-		//      };
-
-		//		function resetData() {
-		//          $rootScope.globals = {};
-		//          $cookieStore.remove('globals');
-		//          $http.defaults.headers.common.Authorization = '';
-		//      };
 	});
+	
+	
 	app.controller('forgetController', function($scope, $http, $location) {
 		console.log("  Method called");
 		$scope.email = "";
@@ -125,7 +112,6 @@
 			console.log($scope.email);
 			$location.url('/login');
 		};
-
 	});
 
 	app.controller('CommentController', [ '$http', function($http) {
@@ -136,7 +122,7 @@
 			console.log(post.comments);
 			post.comments.push(this.comment);
 			this.comment = {};
-			var url = 'http://localhost:8080/blog/online/user/posts';
+			var url = 'online/user/posts';
 			console.log("post:" + JSON.stringify(post));
 
 			var updatedPost = {
@@ -166,11 +152,11 @@
 			var auth = btoa(credentials.email + ":" + credentials.password);
 			console.log('Basic' + auth);
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + auth;
-			var url = 'http://localhost:8080/blog/online/user/signin';
+			var url = 'online/user/signin';
 			var login = $http.post(url);
 			
 			login.success(function(data) {
-				console.log("Login Sucess!" + JSON.stringify(data));
+				console.log("Login Sucess!"/* + JSON.stringify(data)*/);
 				if (credentials.email !== undefined) {
 					setCredentials(data);
 				}
@@ -195,6 +181,7 @@
 			$http.defaults.headers.common.Authorization = '';
 			$rootScope.globals = {};
 			$rootScope.showName = false;
+			$rootScope.usrName = "Guest";
 			$("#newPostAuthor").val("Guest");
 		}
 		;
