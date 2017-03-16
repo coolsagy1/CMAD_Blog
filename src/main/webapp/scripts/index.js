@@ -96,6 +96,8 @@
 	});
 	
 	
+	
+	
 	app.controller('forgetController', function($scope, $http, $location) {
 		console.log("  Method called");
 		$scope.email = "";
@@ -103,6 +105,24 @@
 		$scope.forget = function() {
 			console.log("forget Method called");
 			console.log($scope.email);
+			$location.url('/login');
+
+		};
+	});
+	
+	
+	app.controller('HeaderController', function($scope, $http, $location,$rootScope) {
+		console.log("  headerController called");
+		$rootScope.usrName = "Guest";
+		$scope.logout = function() {
+			console.log("logout Method called");
+			console.log("usrName:"+$rootScope.usrName);
+			$http.defaults.headers.common.Authorization = '';
+			$rootScope.globals = {};
+			$rootScope.showName = false;
+			$rootScope.usrName = "Guest";
+			console.log("usrName:"+$rootScope.usrName);
+			$("#newPostAuthor").val("Guest");
 			$location.url('/login');
 		};
 	});

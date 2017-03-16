@@ -59,7 +59,7 @@
                   <h4>Featured Image URL</h4>
                   <input type="text" ng-model="blog.post.image" placeholder="http://placekitten.com/g/2000/600" />
                   <h4>by:</h4>
-                  <input type="text" id="newPostAuthor" ng-model="blog.post.author" placeholder="{{usrName}}" value="{{usrName}}" readonly/>
+                  <input type="text" id="newPostAuthor" ng-model="blog.post.author" placeholder="{{usrName}}" ng-init="blog.post.author=usrName" value="{{usrName}}" readonly/>
                   <!-- <input  ng-hide=showName type="text" id="newPostAuthor" ng-model="blog.post.author" placeholder="Guest" value="Guest" readonly/> -->         
                   <input type="submit" value="Submit" />
                 </select></form>

@@ -18,7 +18,7 @@
 			<h1 style="color: white; margin-left: 30px" href="#home"
 				ng-click="blog.selectTab('blog')" class="push-left">{{blog.title}}</h1>
 		</div>
-		<div id="myNavbar" class="collapse navbar-collapse">
+		<div id="myNavbar" class="collapse navbar-collapse" ng-controller="HeaderController">
 			<ul class="nav navbar-nav navbar-right">
 
 				<li><a ng-click="blog.selectTab('blog')" class="active"
@@ -47,7 +47,7 @@
 							Hi {{usrName | uppercase}}  <span class="fa fa-angle-double-down" aria-hidden="true"></span>
 						</button>
 						<div class="dropdown-content">
-							<a href="#signup">Update Profile</a> <a href="#logout">Logout</a>
+							<a href="#signup">Update Profile</a> <a href="#logout" ng-click="logout()" >Logout</a>
 						</div>
 					</div></li>
 
