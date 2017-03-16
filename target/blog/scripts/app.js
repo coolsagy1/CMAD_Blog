@@ -19,7 +19,7 @@
 			$scope.loggedIn = true;
 			$location.url('/home');
 	    });
-		
+		 
 		$rootScope.$on("loginFailure", function() {
 			console.log("Failure");
 			$scope.loggedIn = false;
