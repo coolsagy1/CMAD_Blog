@@ -20,12 +20,10 @@
 				blog.tab = 'blog';
 
 				blog.selectTab = function(setTab) {
-					console.log("setTab:"+setTab);
 					blog.tab = setTab;
 				};
 
 				blog.isSelected = function(checkTab) {
-					console.log("blog.tab("+blog.tab+")===checkTab("+checkTab+")");
 					return blog.tab === checkTab;
 				};
 
@@ -38,7 +36,6 @@
 					blog.post.likes = 0;
 					blog.post.title = blog.post.title;
 					blog.post.body = blog.post.body;
-					blog.post.imageURL = blog.post.image;
 					blog.post.author = blog.post.author;
 					console.log("Author:"+blog.post.author);
                     
@@ -53,16 +50,12 @@
 						comments : blog.post.comments
 					};
 
-					console.log(JSON.stringify(blog.post));
-					console.log(JSON.stringify(newPost));
-					console.log("Before :"+JSON.stringify(blog.posts));
-					//blog.posts.unshift(this.post);
-					blog.posts.push(this.post);
-					blog.tab = blog.post.length;
-					console.log("After:"+JSON.stringify(blog.posts));
+					blog.posts.unshift(this.post);
+					//blog.posts.push(this.post);
+					blog.tab = 0;
 					$http.post('online/user/posts',
 							newPost).success(function(data) {
-						console.log(JSON.stringify(data));
+						blog.tab = 0;//blog.posts.length-1;
 					});
 					blog.post = {};
 				};

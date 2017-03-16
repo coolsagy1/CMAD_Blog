@@ -16,7 +16,7 @@
 	          </li>
 	        </ul>
         
-        <div class="post" ng-repeat="post in blog.posts | orderBy:'createdTime'" ng-show="blog.isSelected($index)">
+        <div class="post" ng-repeat="post in blog.posts" ng-show="blog.isSelected($index)">
           <div>            
             <h2>{{post.title}}</h2>
             <img src="{{post.imageURL}}" ng-show="{{post.imageURL}}"/><br> 

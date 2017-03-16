@@ -23,7 +23,7 @@ public class BlogDAO implements DAO {
 	}
 
 	public List<UserPosts> getPosts() {
-		return dStore.createQuery(UserPosts.class).order("createdTime").asList();
+		return dStore.createQuery(UserPosts.class).order("-createdTime").asList();
 	}
 
 	public User createUser(User user) {
