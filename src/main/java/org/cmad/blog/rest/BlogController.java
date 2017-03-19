@@ -91,11 +91,17 @@ public class BlogController {
 	 * Search Method
 	 */
 	@GET
-	@Produces({ "application/json" })
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/search")
 	public Response getPosts(@QueryParam("searchString") String searchString) {
 		System.out.println("BlogController.getPosts()------>>>>ATEESH searchString :"+searchString);
-		List<UserPosts> posts = blog.getPosts(searchString);
+		List<UserPosts> posts = null;
+		try{
+			posts = blog.getPosts(searchString);
+		}
+		catch (Exception e) {
+			return Response.serverError().entity(e.getMessage()).build();
+		}
 		if (posts == null) {
 			return Response.serverError().entity("Nothing found").build();
 		}

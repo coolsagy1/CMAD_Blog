@@ -29,7 +29,6 @@ public class AuthFilter implements Filter {
 
 	Blog blog;
 
-	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		System.out.println("AuthFilter.init()");
 		blog = new SimpleBlog();
@@ -37,7 +36,6 @@ public class AuthFilter implements Filter {
 		blog.setDAO(blogDao);
 	}
 
-	@Override
 	public void doFilter(ServletRequest req, ServletResponse res,
 			FilterChain chain)
 					throws IOException, ServletException {
@@ -71,7 +69,6 @@ public class AuthFilter implements Filter {
 		chain.doFilter(req, res);
 	}
 
-	@Override
 	public void destroy() {
 		System.out.println("AuthFilter.destroy()");
 	}}

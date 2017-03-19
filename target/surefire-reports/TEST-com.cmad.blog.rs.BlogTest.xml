@@ -1,72 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.cmad.blog.rs.BlogTest" time="0.192" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.cmad.blog.rs.BlogTest" time="0.182" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib"/>
-    <property name="java.vm.version" value="25.71-b15"/>
-    <property name="user.country.format" value="IN"/>
-    <property name="gopherProxySet" value="false"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
+    <property name="java.vm.version" value="25.111-b14"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/achhabda/CMAD_TOOLS/programs/Final_CMAD_Blog/CMAD_Blog"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Proj\CMAD\CMAD_Test\CMAD_Blog"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=":"/>
+    <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="US"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/achhabda/CMAD_TOOLS/programs/Final_CMAD_Blog/CMAD_Blog"/>
-    <property name="java.runtime.version" value="1.8.0_71-b15"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/endorsed"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/3f/lgbxxfz92v15qvx1hgp1g_500000gn/T/"/>
+    <property name="user.dir" value="C:\Proj\CMAD\CMAD_Test\CMAD_Blog"/>
+    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\satbhat\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/achhabda/CMAD_TOOLS/programs/workSpace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf8495450556888706547.tmp"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/achhabda/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Proj\CMAD\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4149132311990991142.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_121/bin/server;C:/Program Files/Java/jre1.8.0_121/bin;C:/Program Files/Java/jre1.8.0_121/lib/amd64;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;c:\Program Files\gs\gs9.19\lib;c:\Program Files\gs\gs9.19\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WebEx\Productivity Tools;%programfiles(x86)%\Cisco\OSD\Shell Applications;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files\Lenovo\Fingerprint Manager Pro\;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Live\Shared;C:\Proj\CMAD\programs\apache-maven-3.3.9\bin;C:\Program Files (x86)\NDS\DesignerNxt\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Proj\gitest\Python\Python36-32\Scripts\;C:\Proj\gitest\Python\Python36-32\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;c:\Program Files\gs\gs9.19\lib;c:\Program Files\gs\gs9.19\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WebEx\Productivity Tools;C:\Program Files (x86)\Cisco\OSD\Shell Applications;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files\Lenovo\Fingerprint Manager Pro\;C:\Program Files (x86)\NDS\DesignerNxt\;C:\Program Files\Java\jdk1.8.0_102\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Program Files (x86)\Windows Live\Shared;C:\Users\satbhat\AppData\Roaming\npm;C:\Program Files\Docker Toolbox;C:\Proj\CMAD\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.12"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/achhabda"/>
-    <property name="user.timezone" value="Asia/Kolkata"/>
-    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\satbhat"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="achhabda"/>
-    <property name="java.class.path" value="/Users/achhabda/Desktop/Eclipse copy.app/Contents/Eclipse/../../../../.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="satbhat"/>
+    <property name="java.class.path" value="C:\Proj\CMAD\programs\apache-maven-3.3.9\boot\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -s C:\Proj\CMAD\programs\apache-maven-3.3.9\conf\settings.xml clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
-    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_71"/>
-    <property name="java.ext.dirs" value="/Users/achhabda/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/classes"/>
+    <property name="java.version" value="1.8.0_111"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/Users/achhabda/CMAD_TOOLS/programs/Final_CMAD_Blog/CMAD_Blog/EMBEDDED"/>
-    <property name="file.separator" value="/"/>
+    <property name="maven.home" value="C:\Proj\CMAD\programs\apache-maven-3.3.9"/>
+    <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddPost" time="0.006"/>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddUser" time="0.001"/>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllComments" time="0.001"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddPost" time="0.007"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddUser" time="0"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllComments" time="0.003"/>
   <testcase classname="com.cmad.blog.rs.BlogTest" name="testaddComments" time="0"/>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testGetUserWithEmail" time="0.184"/>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllPosts" time="0"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testGetUserWithEmail" time="0.171"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllPosts" time="0.001"/>
 </testsuite>

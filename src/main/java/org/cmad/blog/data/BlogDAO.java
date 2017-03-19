@@ -2,6 +2,7 @@ package org.cmad.blog.data;
 
 import java.util.List;
 
+import org.cmad.blog.PostNotFoundException;
 import org.cmad.blog.api.Comment;
 import org.cmad.blog.api.User;
 import org.cmad.blog.api.UserPosts;
@@ -25,14 +26,18 @@ public class BlogDAO implements DAO {
 	public List<UserPosts> getPosts() {
 		return dStore.createQuery(UserPosts.class).order("-createdTime").asList();
 	}
-	
-    public List<UserPosts> getPosts(String str) {
-    	System.out.println("BlogDAO.getPosts()-------->>>ateesh1 comment search see3");
-    	
-    	//return dStore.createQuery(UserPosts.class).search(str).order("_id").asList();
-    	return dStore.createQuery(UserPosts.class).order("-createdTime").asList();
+
+	public List<UserPosts> getPosts(String str) throws PostNotFoundException{    	
+		Query<UserPosts> query = dStore.createQuery(UserPosts.class);
+		List<UserPosts> list = null;
+		query.or(
+				query.criteria("title").containsIgnoreCase(str),
+				query.criteria("body").containsIgnoreCase(str)
+				);
+		list = query.asList();
+		return list;
 	}
-    
+
 	public User createUser(User user) {
 		dStore.save(user);
 		return user;
@@ -51,24 +56,24 @@ public class BlogDAO implements DAO {
 		return 0;
 	}
 
-	
+
 	public User updateUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
+
 	public UserPosts readPost(int postId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public int postComment(Comment comment) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	
+
 	public void updatePost(UserPosts post) {
 		//dStore.merge(post);
 		Query<UserPosts> query = dStore.createQuery(UserPosts.class).field("title").equal(post.getTitle()).field("author").equal(post.getAuthor());
@@ -76,5 +81,5 @@ public class BlogDAO implements DAO {
 		dStore.update(query, ops);		
 	}
 
-	
+
 }

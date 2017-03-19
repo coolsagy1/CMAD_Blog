@@ -5,10 +5,15 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Field;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Index;
+import org.mongodb.morphia.annotations.Indexes;
+import org.mongodb.morphia.utils.IndexType;
 
 
 @Entity("posts")
+@Indexes(@Index(fields = @Field(value = "$**", type = IndexType.TEXT)))
 public class UserPosts {
 	@Id
 	private ObjectId id;

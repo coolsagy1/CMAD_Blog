@@ -85,7 +85,7 @@ public class BlogDAOTest implements DAO {
         userPosts.clear();
     }
 
-	@Override
+	
 	public User createUser(User user) {
 		 if (!users.contains(user)) {
 	            users.add(user);
@@ -96,13 +96,11 @@ public class BlogDAOTest implements DAO {
 
 	
 
-	@Override
 	public User updateUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public int createPost(UserPosts userPost) {
 		 if (!userPosts.contains(userPost)) {
 	            userPosts.add(userPost);
@@ -111,30 +109,29 @@ public class BlogDAOTest implements DAO {
 		 return -1;
 	}
 
-	@Override
 	public UserPosts readPost(int postId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public int postComment(Comment comment) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+	
 	public List<User> getUsers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public List<UserPosts> getPosts() {
 		return this.userPosts;
 	}
 
-	@Override
+	
 	public void updatePost(UserPosts post) {
 		// TODO Auto-generated method stub
 		
