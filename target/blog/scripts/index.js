@@ -8,13 +8,17 @@
 				
 				$('#logindrop').show();
 				$('#logoutdrop').hide();
-
+				
 				var blog = this;
 				blog.title = "HeyBuddy";
 				blog.posts = {};
+				blog.headtext = "Updating ..";
+				blog.loading = true;
 				$http.get('online/user/posts')
 						.success(function(data) {
 							blog.posts = data;
+							blog.headtext = "Add New Post";
+							blog.loading = false; 
 						});
 
 				blog.tab = 'blog';
@@ -68,6 +72,7 @@
 		$scope.email = "";
 		$scope.password = "";
 		$scope.confirmpwd = "";
+		
 		$scope.signup = function(isValid) {
 			console.log("signin Method called");
 			console.log($scope.name);
@@ -75,7 +80,9 @@
 			console.log($scope.password);
 			console.log("ateesh");
 			console.log(isValid);
+			$scope.loading = true;
 			console.log("change location");
+			
 			if(isValid){
 			var user = {
 				name : $scope.name,
@@ -87,13 +94,17 @@
 			signup.success(function() {
 				console.log("signup.success");
 				$location.url('/login');
+				$scope.loading = false;
 			});
 			signup.error(function() {
 				console.log("signup.failure");
+				$scope.loading = false;
 			});			
 			}
 		};
 	});
+	
+	
 	
 	
 	app.controller('forgetController', function($scope, $http, $location) {
@@ -104,7 +115,69 @@
 			console.log("forget Method called");
 			console.log($scope.email);
 			$location.url('/login');
+
 		};
+	});
+	
+	
+	app.controller('HeaderController', function($scope, $http, $location,$rootScope) {
+		console.log("  headerController called");
+		$rootScope.usrName = "Guest";
+		$scope.logout = function() {
+			console.log("logout Method called");
+			console.log("usrName:"+$rootScope.usrName);
+			$http.defaults.headers.common.Authorization = '';
+			$rootScope.globals = {};
+			$rootScope.showName = false;
+			$rootScope.usrName = "Guest";
+			console.log("usrName:"+$rootScope.usrName);
+			$("#newPostAuthor").val("Guest");
+			$location.url('/login');
+		};
+		
+		
+		$scope.search = function() {
+		
+			var result = this;
+			result.posts = {};
+			
+			$rootScope.searchtext =$scope.searchtext;
+			
+			$location.url('/search');
+			$scope.searchtext = " ";
+		};
+	});
+	
+	app.controller('SearchController', function($scope, $http, $location,$rootScope) {
+		console.log("  search Controller called");
+		var result = this;
+		result.posts = {};
+		result.tab = 'blog';
+		 $scope.loading = true;
+		 $scope.searching = "Searching ..";
+		result.selectTab = function(setTab) {
+			result.tab = setTab;
+		};
+
+		result.isSelected = function(checkTab) {
+			return result.tab === checkTab;
+		};
+		 console.log(result.isSelected('blog'));
+		
+			//var url ="/online/user/search?searchString="+$rootScope.searchtext ;
+			//console.log(url);
+		$http.get('online/user/posts')
+		.success(function(data) {
+			result.posts = data;
+			
+			console.log("done");
+			 $scope.loading = false;
+			 $scope.searching = "Search Results";
+		});
+		
+       console.log(result.isSelected('blog'));
+		$rootScope.searchtext = "";	
+		
 	});
 
 	app.controller('CommentController', [ '$http', function($http) {
@@ -133,17 +206,19 @@
 		};
 	} ]);
 
-	app.controller('LoginController', function($http, $rootScope, $location) {
+	app.controller('LoginController', function($http, $rootScope, $location,$scope) {
 		console.log("Entered LoginController1");
 		$('#logindrop').show();
 		$('#logoutdrop').hide();
 		var credentials = this;
+		
 		this.login = function(credentials) {
 			console.log("inside login method");
 			console.log(credentials);
 			console.log(JSON.stringify(credentials));
 			var auth = btoa(credentials.email + ":" + credentials.password);
 			console.log('Basic' + auth);
+			 $scope.loading = true;
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + auth;
 			var url = 'online/user/signin';
 			var login = $http.post(url);
@@ -159,15 +234,17 @@
 				$rootScope.isloginfailed = false;
 				$rootScope.usrName = data.name;
 				$rootScope.showName = true;
-				
+				 $scope.loading = false;
 			});
 			login.error(function(data) {
 				console.log("Login Failed!");
 				$('#logindrop').show();
 				$('#logoutdrop').hide();
 				$rootScope.isloginfailed = true;
+				 $scope.loading = false;
 				resetData();
 			});
+			
 		};
 
 		function resetData() {
@@ -256,6 +333,8 @@
 			templateUrl : "templates/not-supportedtwt.html"
 		}).when('/auth-failed', {
 			templateUrl : "templates/auth-failed.html"
+		}).when('/search', {
+			templateUrl : "templates/search.html"
 		}).when('/new-post', {
 			templateUrl : "templates/new-post.html"
 		}).otherwise({

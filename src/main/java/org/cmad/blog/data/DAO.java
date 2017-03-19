@@ -23,6 +23,8 @@ public interface DAO {
 	List<User> getUsers();
 
 	List<UserPosts> getPosts();
+	
+	List<UserPosts> getPosts(String str);
 
 	void updatePost(UserPosts post);
 

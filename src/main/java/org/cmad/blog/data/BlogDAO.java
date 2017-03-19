@@ -25,7 +25,14 @@ public class BlogDAO implements DAO {
 	public List<UserPosts> getPosts() {
 		return dStore.createQuery(UserPosts.class).order("-createdTime").asList();
 	}
-
+	
+    public List<UserPosts> getPosts(String str) {
+    	System.out.println("BlogDAO.getPosts()-------->>>ateesh1 comment search see3");
+    	
+    	//return dStore.createQuery(UserPosts.class).search(str).order("_id").asList();
+    	return dStore.createQuery(UserPosts.class).order("-createdTime").asList();
+	}
+    
 	public User createUser(User user) {
 		dStore.save(user);
 		return user;
@@ -44,28 +51,30 @@ public class BlogDAO implements DAO {
 		return 0;
 	}
 
-	@Override
+	
 	public User updateUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public UserPosts readPost(int postId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
+	
 	public int postComment(Comment comment) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+	
 	public void updatePost(UserPosts post) {
 		//dStore.merge(post);
 		Query<UserPosts> query = dStore.createQuery(UserPosts.class).field("title").equal(post.getTitle()).field("author").equal(post.getAuthor());
 		UpdateOperations<UserPosts> ops = dStore.createUpdateOperations(UserPosts.class).set("comments", post.getComments()).set("likes", post.getLikes());
 		dStore.update(query, ops);		
 	}
+
+	
 }

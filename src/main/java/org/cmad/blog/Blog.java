@@ -21,7 +21,7 @@ public interface Blog {
 
 	public List<UserPosts> getPosts(User user) throws BlogException;
 
-	public List<UserPosts> getPosts(Topic topic) throws BlogException;
+	public List<UserPosts> getPosts(String string) throws BlogException;
 
 	public UserPosts getPost(int postId) throws PostNotFoundException, BlogException;
 

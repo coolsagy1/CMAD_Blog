@@ -76,9 +76,10 @@ public void setDAO(DAO blogDAO)  {
 		return null;
 	}
 
-	public List<UserPosts> getPosts(Topic topic) throws BlogException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<UserPosts> getPosts(String str) throws BlogException {
+		List<UserPosts> postList = blogDao.getPosts(str);
+		System.out.println("SimpleBlog.getPosts() result: ateesh"+postList);
+		return postList;
 	}
 
 	public UserPosts getPost(int postId) throws PostNotFoundException, BlogException {
@@ -86,13 +87,13 @@ public void setDAO(DAO blogDAO)  {
 		return null;
 	}
 
-	@Override
+	
 	public User updateUser(User user) throws BlogException {
 		User usr = blogDao.updateUser(user);
 		return usr;
 	}
 
-	@Override
+	
 	public void updatePost(UserPosts post) {
 		blogDao.updatePost(post);
 	}

@@ -1,21 +1,25 @@
-<div class="content">
+<div class="content" >
 	<div class="container" style= "padding-top: 40px;">         
 		<div class="row well well-lg">
 	           <ul class="post-grid" ng-show="blog.isSelected('blog')">
 	              <li class="col-s-4" ng-class="reset-s" ng-click="blog.selectTab('new')" >
-	            <h3>Add New Post</h3>
+	            <h3>{{blog.headtext}}</h3>
+	            <p> </p>
 	            <p></p>
 	            <p></p>
-	            <p></p>
+	            
 	          </li>
+	          <i> <img id="mySpinner" src="images/loading.gif"  ng-show="blog.loading" /></i>
 	          <li ng-repeat="post in blog.posts" class="col-s-4" ng-class="{ 'reset-s' : $index%3==0 }" ng-click="blog.selectTab($index)" >
-	            <h3>{{post.title}}</h3>
+	            <h3>{{post.title | limitTo:40}}...</h3>
 	            <p>{{post.body | limitTo:70}}...</p>
 	            <p class="fa fa-comment push-left"> {{post.comments.length}}</p>
 	            <p class="fa fa-heart push-right"> {{post.likes}}</p>
 	          </li>
 	        </ul>
         
+         
+         
         <div class="post" ng-repeat="post in blog.posts" ng-show="blog.isSelected($index)">
           <div>            
             <h2>{{post.title}}</h2>
@@ -41,7 +45,7 @@
                 <h4>Add Comment</h4>
                   <textarea ng-model="commentCtrl.comment.comment" cols="30" rows="5" required></textarea>
                 <label for="">by:</label>
-                  <input type="text" ng-model="commentCtrl.comment.author" ng-init="commentCtrl.comment.author=usrName" value="{{usrName}}" readonly/>
+                  <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name"/> 
                   
                   <input type="submit" value="Submit" />
                 </form>

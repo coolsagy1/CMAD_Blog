@@ -9,6 +9,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -86,6 +87,23 @@ public class BlogController {
 		return Response.ok().build();
 	}
 
+	/*
+	 * Search Method
+	 */
+	@GET
+	@Produces({ "application/json" })
+	@Path("/search")
+	public Response getPosts(@QueryParam("searchString") String searchString) {
+		System.out.println("BlogController.getPosts()------>>>>ATEESH searchString :"+searchString);
+		List<UserPosts> posts = blog.getPosts(searchString);
+		if (posts == null) {
+			return Response.serverError().entity("Nothing found").build();
+		}
+		return Response.ok().entity(posts).build();
+	}
+	
+	
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/posts")

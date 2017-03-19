@@ -139,4 +139,9 @@ public class BlogDAOTest implements DAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public List<UserPosts> getPosts(String str) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

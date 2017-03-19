@@ -50,12 +50,12 @@
 							<a href="#signup">Update Profile</a> <a href="#logout" ng-click="logout()" >Logout</a>
 						</div>
 					</div></li>
-
+				
 				<li style="margin-top: 15px; margin-right: 10px">
-					<form role="search" method="get" class="navbar-form">
-						<input type="text" name="q" class="form-control"
+					<form   class="navbar-form" ng-submit="search()">
+						<input type="text" name="q" class="form-control" ng-model="searchtext"
 							placeholder="Search..."> <a href="#search"> <span
-							class="fa fa-search"></span></a>
+							class="fa fa-search"></span></a></form>
 				</li>
 			</ul>
 		</div>
