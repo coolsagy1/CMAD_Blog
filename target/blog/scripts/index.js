@@ -145,7 +145,7 @@
 			$rootScope.searchtext =$scope.searchtext;
 			
 			$location.url('/search');
-			$scope.searchtext = " ";
+			$scope.searchtext = "";
 		};
 	});
 	
@@ -165,18 +165,19 @@
 		};
 		 console.log(result.isSelected('blog'));
 		
-			//var url ="/online/user/search?searchString="+$rootScope.searchtext ;
-			//console.log(url);
-		$http.get('online/user/posts')
-		.success(function(data) {
-			result.posts = data;
-			
-			console.log("done");
+		var url ="online/user/search?searchString="+$rootScope.searchtext;
+		console.log(url);
+		var searchReq = $http.get(url);
+			searchReq.success(function(data) {
+			result.posts = data;	
 			 $scope.loading = false;
 			 $scope.searching = "Search Results";
-		});
-		
-       console.log(result.isSelected('blog'));
+			});
+			
+			searchReq.error(function(data){
+			 $scope.loading = false;
+			 $scope.searching = "No Results Found";
+			});
 		$rootScope.searchtext = "";	
 		
 	});

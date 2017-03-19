@@ -100,9 +100,9 @@ public class BlogController {
 			posts = blog.getPosts(searchString);
 		}
 		catch (Exception e) {
-			return Response.serverError().entity(e.getMessage()).build();
+			return Response.serverError().entity("Some Error Occurred! Please Try Again").build();
 		}
-		if (posts == null) {
+		if (posts == null || posts.isEmpty()) {
 			return Response.serverError().entity("Nothing found").build();
 		}
 		return Response.ok().entity(posts).build();
