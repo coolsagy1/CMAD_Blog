@@ -96,7 +96,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<outputDirectory>/Users/achhabda/CMAD_TOOLS/programs/tomcat-8.5.9/webapps</outputDirectory>
+					<outputDirectory>C:/Proj/CMAD/programs/apache-tomcat-8.5.9/webapps</outputDirectory>
 				</configuration>
 			</plugin> -->
 		</plugins>

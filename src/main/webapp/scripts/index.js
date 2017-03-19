@@ -165,9 +165,9 @@
 		};
 		 console.log(result.isSelected('blog'));
 		
-			//var url ="/online/user/search?searchString="+$rootScope.searchtext ;
-			//console.log(url);
-		$http.get('online/user/posts')
+			var url ="online/user/search?searchString="+$rootScope.searchtext ;
+			console.log(url);
+		$http.get(url)
 		.success(function(data) {
 			result.posts = data;
 			
