@@ -20,20 +20,14 @@
 		</div>
 		<div id="myNavbar" class="collapse navbar-collapse" ng-controller="HeaderController">
 			<ul class="nav navbar-nav navbar-right">
-
+               	<li style="margin-top: 15px; margin-right: 10px">
+					<form   class="navbar-form" ng-submit="search()">
+						<input type="text" name="q" class="form-control" ng-model="searchtext"
+							placeholder="Search...sh"> <a href="#search"> <span
+							class="fa fa-search"></span></a></form></li>
 				<li><a ng-click="blog.selectTab('blog')" class="active"
 					href="#home"><button class="dropbtn" id="homebutton">
 							Home</button></a></li>
-				<!-- <li class="dropdown">
-					<div>
-					<button class="dropbtn dropdown-toggle " id="dropbtn1">
-						Blog <span class="fa fa-angle-double-down" aria-hidden="true"></span>
-					</button>
-					<div class="dropdown-content">
-						<a href="#home" ng-click="blog.selectTab('blog')">All Posts</a> <a
-							ng-click="blog.selectTab('new')">New Post</a>
-					</div> </div>
-				</li> -->
 				<li><div class="dropdown" id="logindrop">
 						<button class="dropbtn dropdown-toggle" id="dropbtn1">
 							Login <span class="fa fa-angle-double-down" aria-hidden="true"></span>
@@ -50,13 +44,11 @@
 							<a href="#signup">Update Profile</a> <a href="#logout" ng-click="logout()" >Logout</a>
 						</div>
 					</div></li>
+				    <li><a class="active"
+					href="#about"><button class="dropbtn" id="homebutton">
+							About-us</button></a></li>
+			
 				
-				<li style="margin-top: 15px; margin-right: 10px">
-					<form   class="navbar-form" ng-submit="search()">
-						<input type="text" name="q" class="form-control" ng-model="searchtext"
-							placeholder="Search..."> <a href="#search"> <span
-							class="fa fa-search"></span></a></form>
-				</li>
 			</ul>
 		</div>
 	</nav>

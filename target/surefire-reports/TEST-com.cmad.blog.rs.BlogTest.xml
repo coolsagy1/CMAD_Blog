@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.cmad.blog.rs.BlogTest" time="0.132" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.cmad.blog.rs.BlogTest" time="0.192" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_71.jdk/Contents/Home/jre/lib"/>
@@ -27,7 +27,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/achhabda/CMAD_TOOLS/programs/workSpace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf708818802299775441.tmp"/>
+    <property name="classworlds.conf" value="/Users/achhabda/CMAD_TOOLS/programs/workSpace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf8495450556888706547.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/achhabda/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -63,10 +63,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddPost" time="0.003"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddPost" time="0.006"/>
   <testcase classname="com.cmad.blog.rs.BlogTest" name="testAddUser" time="0.001"/>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllComments" time="0"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllComments" time="0.001"/>
   <testcase classname="com.cmad.blog.rs.BlogTest" name="testaddComments" time="0"/>
-  <testcase classname="com.cmad.blog.rs.BlogTest" name="testGetUserWithEmail" time="0.128"/>
+  <testcase classname="com.cmad.blog.rs.BlogTest" name="testGetUserWithEmail" time="0.184"/>
   <testcase classname="com.cmad.blog.rs.BlogTest" name="testgetAllPosts" time="0"/>
 </testsuite>

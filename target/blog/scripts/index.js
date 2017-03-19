@@ -80,10 +80,11 @@
 			console.log($scope.password);
 			console.log("ateesh");
 			console.log(isValid);
-			$scope.loading = true;
+			
 			console.log("change location");
 			
 			if(isValid){
+				$scope.loading = true;
 			var user = {
 				name : $scope.name,
 				password : $scope.password,
